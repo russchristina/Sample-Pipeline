@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.revature.beans.Role">
+		<id name="id" column="role_id" type="int">
+			<generator class="com.revature.beans.Role">
+			</generator>
+		</id>
+		<property name="name" column="role_name" type="string"></property>
+	</class>
+</hibernate-mapping>

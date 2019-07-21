@@ -1,0 +1,49 @@
+<div class="c-section">
+    <h1>DIRECTIVES</h1>
+    <p>A directive provides a way of invoking Angular functionality within an HTML file. They act as syntax that can be used in the HTML format without breaking our front end.</p>
+    <h3>*ngIf</h3>
+    <div class="c-section">
+        <p>What does the asterisk(*) in front of the ngIf mean?</p>
+        <input type="button" (click)=toggleTransparency()/>
+        <p *ngIf="visible; else aReference">
+            Any directive that has an asterisk(*) is a "structural directive". This means that the directive in question will actually manipulate the HTML directly. This is, it will be capable of physically deleting or adding HTML on the spot for us.
+        </p>
+        <ng-template #aReference>
+            <p style="color:darkmagenta">Click the button above to show the answer.</p>
+        </ng-template>
+    </div>
+
+    <h3>*ngFor</h3>
+    <div class="c-section">
+        <p>Since ngFor is another directive that will change the actual HTML directly, we need the asterisk to signify that it is a structral directive.</p>
+        <hr>
+        Movie Name <br>
+        <input type="text" [(ngModel)]=movie.name><br>
+        Movie Rating<br>
+        <input type="text" [(ngModel)]=movie.rating><br>
+        <button (click)="submitMovie()">SUBMIT</button>
+        <br>
+        <table border=2px>
+            <thead>
+                <tr>
+                    <th>Movie Name</th>
+                    <th>Movie Rating</th>
+                    <th>Creation Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let m of movies">
+                    <td>{{m.name}}</td>
+                    <td>{{m.rating}}</td>
+                    <td>{{m.date | date:'full' | uppercase}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="c-section">
+        <h1>Attribute Directives</h1>
+        <p [ngStyle]="styleObject" (click)=changeStyle()>
+            Attribute directives are directives that are applied as attributes in the elements themsevles, like structural directives. However, these directives typically do NOT aim to change the actual structure of the HTML, but rather change the style.
+        </p>
+    </div>
+</div>

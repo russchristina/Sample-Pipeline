@@ -1,0 +1,34 @@
+<div class="c-section">
+    <h1>DATABINDING</h1>
+    <p>
+        In Angular, databinding is the act of passing data from the backend (our typescript file) to the view or vice versa. There are 3 ways to perform one-way data binding in Angular.  That is,
+        data is either passed from the backend to the view or from the view to the backend. When data is simultaneously passed both forward and backward, this is called two-way databinding.
+    </p>
+    <h3>STRING INTERPOLATION</h3>
+    <p>
+        In order to perform string interpolation, you need to write the item to be evaluated in between double curly braces like so.
+
+        It is essentially a block typescript as innerHTML. You cannot perform interpolation with element attributes. Interpolation must be performed in between tags, not in them.
+    </p>
+    <p><b>EXAMPLES</b></p>
+    <br> 2 + 5 + 8 * 3 = {{2 + 5 + 8 * 3}}
+    <br> The secret message is : {{variable}}.
+    <hr>
+    <h3>Property Binding</h3>
+    <p>
+        Property binding is a one-way databinding technique that binds from the back to the front, but this time we apply it WITHIN element tags. We do this by surrounding what would be the "attribute" of the element with square brackets [likethis].
+    </p>
+    <button class="btn btn-success" (click)=toggleVisibility()>TOGGLE VISIBILITY</button>
+
+    <div [hidden]=visibility>
+        <p>Here I am!</p>
+    </div>
+    <h3>EVENT BINDING</h3>
+    <p>Event binding is the third approach to one-way databinding in which we take input, or an event from the frontend, and transfer it to the backend (so our typescript portion of our component). This is done within the element's tag, except this time we use parentheses instead of brackets. We will typically wrap these around events.</p>
+    <h3>TWO-WAY DATABINDING</h3>
+    <p>We can set up two-way databinding, where data we input is fed back to a component and can be brought back all in the same action. In order to do this, we need to invoke both property binding AND event binding alongside a directive called ngModel.</p>
+    <div>
+        <input type="text" [(ngModel)]="userInput"/>
+        <p>You have inputted: {{userInput}}</p>
+    </div>
+</div>
